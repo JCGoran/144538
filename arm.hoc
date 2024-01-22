@@ -160,7 +160,7 @@ proc assignDP () { local ii,jj,shmlenrangewid,elmlenrangewid,shminmlen,shmaxmlen
       {xo=cedp.o(ii*NMUSCLES+jj) xo.setmlenrange(-2,-1)}
 
       // Add the muscle length bounds to the DP NQS table.
-      nqDP.append(1,xo.id,DP,xo.zloc,MTYP.o(xo.zloc).s,shminmlen,shmaxmlen)
+      nqDP.append(1,xo.id,DP,xo.zloc,MTYP.object(xo.zloc).s,shminmlen,shmaxmlen)
     }
     // For the elbow cells...
     for jj=2,3 {
@@ -168,8 +168,8 @@ proc assignDP () { local ii,jj,shmlenrangewid,elmlenrangewid,shminmlen,shmaxmlen
       {xo=cedp.o(ii*NMUSCLES+jj) xo.setmlenrange(elminmlen,elmaxmlen)}
 
       // Add the muscle length bounds to the DP NQS table.
-      nqDP.append(1,xo.id,DP,xo.zloc,MTYP.o(xo.zloc).s,elminmlen,elmaxmlen)
-    }    
+      nqDP.append(1,xo.id,DP,xo.zloc,MTYP.object(xo.zloc).s,elminmlen,elmaxmlen)
+    }
 
     // Move to the next subrange.
     shminmlen += shmlenrangewid
